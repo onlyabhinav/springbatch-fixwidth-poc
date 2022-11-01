@@ -33,7 +33,7 @@ public class JobLaunchingController {
 	public void launch(@RequestParam("name") String name) throws Exception {
 
 //		this.jobOperator.start("customer-job", String.format("name=%s", name));
-		this.jobOperator.start("customer2job", String.format("name=%s", name));
+		this.jobOperator.start("mixFormatJob", String.format("name=%s", name));
 	}
 
 	@RequestMapping(value = "/2", method = RequestMethod.POST)
