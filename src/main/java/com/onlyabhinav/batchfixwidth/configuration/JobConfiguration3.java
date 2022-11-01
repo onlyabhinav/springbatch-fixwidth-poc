@@ -35,10 +35,11 @@ import org.springframework.core.io.ClassPathResource;
 import com.onlyabhinav.batchfixwidth.domain.Customer;
 import com.onlyabhinav.batchfixwidth.domain.Customer2;
 import com.onlyabhinav.batchfixwidth.domain.CustomerFieldSetMapper;
+import com.onlyabhinav.batchfixwidth.domain.CustomerFieldSetMapper2;
 
 
 @Configuration
-public class JobConfiguration {
+public class JobConfiguration3 {
 
 	@Autowired
 	public JobBuilderFactory jobBuilderFactory;
@@ -47,14 +48,14 @@ public class JobConfiguration {
 	public StepBuilderFactory stepBuilderFactory;
 
 	
-	@Bean
-	public FlatFileItemReader<Customer> customerItemReader() {
-		FlatFileItemReader<Customer> reader = new FlatFileItemReader<>();
+	@Bean(name = "customerItemReader2")
+	public FlatFileItemReader<Customer2> customerItemReader() {
+		FlatFileItemReader<Customer2> reader = new FlatFileItemReader<>();
 
 		reader.setLinesToSkip(1);
-		reader.setResource(new ClassPathResource("/data/customer-fixwd.txt"));
+		reader.setResource(new ClassPathResource("/data/customer-fixwd2.txt"));
 
-		DefaultLineMapper<Customer> customerLineMapper = new DefaultLineMapper<>();
+		DefaultLineMapper<Customer2> customerLineMapper = new DefaultLineMapper<>();
 
 		
 		//FixedLengthTokenizer fixLenTokenizer
@@ -65,7 +66,7 @@ public class JobConfiguration {
 
 //		customerLineMapper.setLineTokenizer(tokenizer);
 		customerLineMapper.setLineTokenizer(fixedLengthTokenizer());
-		customerLineMapper.setFieldSetMapper(new CustomerFieldSetMapper());
+		customerLineMapper.setFieldSetMapper(new CustomerFieldSetMapper2());
 		customerLineMapper.afterPropertiesSet();
 
 		reader.setLineMapper(customerLineMapper);
@@ -81,32 +82,32 @@ public class JobConfiguration {
             tokenizer.setColumns(new Range(1,5),
                                  new Range(6,17),
                                  new Range(18,29),
-                                 new Range(30,48));
+                                 new Range(30));
             return tokenizer;
     }
 
-	@Bean
-	public ItemWriter<Customer> customerItemWriter() {
+	@Bean(name="customerItemWriter2")
+	public ItemWriter<Customer2> customerItemWriter2() {
 		return items -> {
-			for (Customer item : items) {
+			for (Customer2 item : items) {
 				System.out.println(item.toString());
 			}
 		};
 	}
 	
 
-	@Bean(name="step1")
+	@Bean(name="step2")
 	public Step step1() {
 		return stepBuilderFactory.get("step1")
-				.<Customer, Customer>chunk(500)
+				.<Customer2, Customer2>chunk(500)
 				.reader(customerItemReader())
-				.writer(customerItemWriter())
+				.writer(customerItemWriter2())
 				.build();
 	}
 
-	@Bean
+	@Bean(name="customer2job")
 	public Job job() {
-		return jobBuilderFactory.get("customer-job")
+		return jobBuilderFactory.get("customer2job")
 				.start(step1())
 				.build();
 	}
