@@ -51,13 +51,16 @@ import com.onlyabhinav.batchfixwidth.domain.Customer;
 import com.onlyabhinav.batchfixwidth.domain.Customer2;
 import com.onlyabhinav.batchfixwidth.domain.CustomerFieldSetMapper;
 import com.onlyabhinav.batchfixwidth.domain.CustomerFieldSetMapper2;
+import com.onlyabhinav.batchfixwidth.mixformat.classifier.MixRecordClassifier;
 import com.onlyabhinav.batchfixwidth.mixformat.domain.MixRecord;
 import com.onlyabhinav.batchfixwidth.mixformat.fieldsetmappers.ARecordFieldSetMapper;
 import com.onlyabhinav.batchfixwidth.mixformat.fieldsetmappers.BRecordFieldSetMapper;
 import com.onlyabhinav.batchfixwidth.mixformat.fieldsetmappers.OneRecordFieldSetMapper;
+import com.onlyabhinav.batchfixwidth.mixformat.fieldsetmappers.UnknownRecordFieldSetMapper;
 import com.onlyabhinav.batchfixwidth.mixformat.processors.ARecordItemProcessor;
 import com.onlyabhinav.batchfixwidth.mixformat.processors.BRecordItemProcessor;
 import com.onlyabhinav.batchfixwidth.mixformat.processors.OneRecordItemProcessor;
+import com.onlyabhinav.batchfixwidth.mixformat.processors.UnknownRecordItemProcessor;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -75,6 +78,10 @@ public class JobConfigurationMixFormat {
 	
 	private Map tokenizers;
 	private Map fieldSetMappers;
+	
+	
+	@Autowired
+	private MixRecordClassifier mixRecordClassifier;
 	
 //    @Bean
 //    @StepScope
@@ -107,6 +114,7 @@ public class JobConfigurationMixFormat {
             tokenizers.put("A*", aRecordTokenizer());
             tokenizers.put("B*", bRecordTokenizer());
             tokenizers.put("1*", oneRecordTokenizer());
+            tokenizers.put("*", unknownRecordTokenizer());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -114,6 +122,7 @@ public class JobConfigurationMixFormat {
         fieldSetMappers.put("A*", new ARecordFieldSetMapper());
         fieldSetMappers.put("B*", new BRecordFieldSetMapper());
         fieldSetMappers.put("1*", new OneRecordFieldSetMapper());
+        fieldSetMappers.put("*", new UnknownRecordFieldSetMapper());
         patternLineMapper.setTokenizers(tokenizers);
         patternLineMapper.setFieldSetMappers(fieldSetMappers);
         return patternLineMapper;
@@ -129,6 +138,7 @@ public class JobConfigurationMixFormat {
         patternMap.put("A*", new ARecordItemProcessor());
         patternMap.put("B*", new BRecordItemProcessor());
         patternMap.put("1*", new OneRecordItemProcessor());
+        patternMap.put("*", new UnknownRecordItemProcessor());
         classifier.setPatternMap(patternMap);
         processor.setClassifier(classifier);
         
@@ -137,22 +147,24 @@ public class JobConfigurationMixFormat {
     }
 
 	@Bean(name="mixFormatItemWriter")
-	public ItemWriter mixItemWriter() {
+	public ItemWriter<MixRecord> mixItemWriter() {
 
 		ClassifierCompositeItemWriter mixItemWriter = new ClassifierCompositeItemWriter<>();
+		
+		mixItemWriter.setClassifier(mixRecordClassifier);
 		
 		return mixItemWriter;
 
 	}
 	
-	@Bean(name="mixFormatItemWriterDummy")
-	public ItemWriter<MixRecord> mixFormatItemWriterDummy() {
-		return items -> {
-			for (MixRecord item : items) {
-				System.out.println(item.toString());
-			}
-		};
-	}
+//	@Bean(name="mixFormatItemWriterDummy")
+//	public ItemWriter<MixRecord> mixFormatItemWriterDummy() {
+//		return items -> {
+//			for (MixRecord item : items) {
+//				System.out.println(item.toString());
+//			}
+//		};
+//	}
 	
 	
 //    @Bean
@@ -196,6 +208,15 @@ public class JobConfigurationMixFormat {
                              new Range(27));
         return tokenizer;
 }
+    
+    public DelimitedLineTokenizer unknownRecordTokenizer() {
+    	DelimitedLineTokenizer tokenizer = new DelimitedLineTokenizer();
+
+        tokenizer.setNames("lineString");
+        tokenizer.setDelimiter(",");
+        
+        return tokenizer;
+}
 	
 
 	@Bean(name="mixFormatJobStep")
@@ -203,7 +224,7 @@ public class JobConfigurationMixFormat {
 		return stepBuilderFactory.get("step1")
 				.chunk(500)
 				.reader(reader())
-				.writer(mixFormatItemWriterDummy())
+				.writer(mixItemWriter())
 				.build();
 	}
 
