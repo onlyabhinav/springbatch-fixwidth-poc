@@ -114,7 +114,7 @@ public class JobConfigurationMixFormat {
             tokenizers.put("A*", aRecordTokenizer());
             tokenizers.put("B*", bRecordTokenizer());
             tokenizers.put("1*", oneRecordTokenizer());
-            tokenizers.put("*", unknownRecordTokenizer());
+            tokenizers.put("*", unknownRecordTokenizer2());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -209,11 +209,22 @@ public class JobConfigurationMixFormat {
         return tokenizer;
 }
     
-    public DelimitedLineTokenizer unknownRecordTokenizer() {
-    	DelimitedLineTokenizer tokenizer = new DelimitedLineTokenizer();
+//    public DelimitedLineTokenizer unknownRecordTokenizer() {
+//    	DelimitedLineTokenizer tokenizer = new DelimitedLineTokenizer();
+//
+//        tokenizer.setNames("lineString");
+//        tokenizer.setDelimiter(",");
+//        
+//        return tokenizer;
+//}
+
+    public FixedLengthTokenizer unknownRecordTokenizer2() {
+    	FixedLengthTokenizer tokenizer = new FixedLengthTokenizer();
 
         tokenizer.setNames("lineString");
-        tokenizer.setDelimiter(",");
+        tokenizer.setColumns(new Range(1));
+        tokenizer.setStrict(false);
+        //tokenizer.(",");
         
         return tokenizer;
 }
@@ -222,7 +233,7 @@ public class JobConfigurationMixFormat {
 	@Bean(name="mixFormatJobStep")
 	public Step step1() {
 		return stepBuilderFactory.get("step1")
-				.chunk(500)
+				.chunk(5)
 				.reader(reader())
 				.writer(mixItemWriter())
 				.build();
