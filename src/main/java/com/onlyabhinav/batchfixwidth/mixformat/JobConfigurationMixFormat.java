@@ -136,14 +136,14 @@ public class JobConfigurationMixFormat {
         return processor;
     }
 
-//	@Bean(name="mixFormatItemWriter")
-//	public ItemWriter mixItemWriter() {
-//
-//		ClassifierCompositeItemWriter mixItemWriter = new ClassifierCompositeItemWriter<>();
-//		
-//		return mixItemWriter;
-//
-//	}
+	@Bean(name="mixFormatItemWriter")
+	public ItemWriter mixItemWriter() {
+
+		ClassifierCompositeItemWriter mixItemWriter = new ClassifierCompositeItemWriter<>();
+		
+		return mixItemWriter;
+
+	}
 	
 	@Bean(name="mixFormatItemWriterDummy")
 	public ItemWriter<MixRecord> mixFormatItemWriterDummy() {
