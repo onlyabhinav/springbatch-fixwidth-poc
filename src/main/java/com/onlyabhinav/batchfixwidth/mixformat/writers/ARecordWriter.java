@@ -34,12 +34,12 @@ public class ARecordWriter<MixRecord> implements ItemWriter<MixRecord> {
 
 		for (MixRecord item : items) {
 			log.info(item.toString());
-		//	saveToDB((ARecord) item);
+			saveToDB((ARecord) item);
 		}
 		
-		int[] res = saveToDBBulk((List<ARecord>) items);
+		//int[] res = saveToDBBulk((List<ARecord>) items);
 		
-		log.info("Bulk Update output={}",res);
+		//log.info("Bulk Update output={}",res);
 
 	}
 
