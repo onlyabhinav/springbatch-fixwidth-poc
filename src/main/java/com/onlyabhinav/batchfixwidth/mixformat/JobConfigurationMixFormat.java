@@ -117,7 +117,7 @@ public class JobConfigurationMixFormat {
         FlatFileItemReader<MixRecord>  reader = new FlatFileItemReader();
         log.info("[START] - Input File name = {}");
         reader.setLinesToSkip(1);
-		reader.setResource(new ClassPathResource("/data/customer-fixwd-mixformat.txt"));
+		reader.setResource(new ClassPathResource("/data/mockfile_10000_24361.txt"));
         reader.setLineMapper(patternLineMapper());
         log.info("[END] - Input File name = {}");
         return reader;
@@ -212,30 +212,30 @@ public class JobConfigurationMixFormat {
         FixedLengthTokenizer tokenizer = new FixedLengthTokenizer();
 
         tokenizer.setNames("id", "firstName", "lastName", "birthdate");
-        tokenizer.setColumns(new Range(1,1),
-                             new Range(2,13),
-                             new Range(14,26),
-                             new Range(27));
+        tokenizer.setColumns(new Range(23,45),
+                             new Range(1,22),
+                             new Range(46,68),
+                             new Range(146));
         return tokenizer;
 }
     public FixedLengthTokenizer bRecordTokenizer() {
         FixedLengthTokenizer tokenizer = new FixedLengthTokenizer();
 
         tokenizer.setNames("id", "firstName", "lastName", "birthdate");
-        tokenizer.setColumns(new Range(1,1),
-                             new Range(2,13),
-                             new Range(14,26),
-                             new Range(27));
+        tokenizer.setColumns(new Range(23,45),
+                new Range(1,22),
+                new Range(46,68),
+                new Range(146));
         return tokenizer;
 }
     public FixedLengthTokenizer oneRecordTokenizer() {
         FixedLengthTokenizer tokenizer = new FixedLengthTokenizer();
 
         tokenizer.setNames("id", "firstName", "lastName", "birthdate");
-        tokenizer.setColumns(new Range(1,1),
-                             new Range(2,13),
-                             new Range(14,26),
-                             new Range(27));
+        tokenizer.setColumns(new Range(23,45),
+                new Range(1,22),
+                new Range(46,68),
+                new Range(146));
         return tokenizer;
 }
     
@@ -251,13 +251,25 @@ public class JobConfigurationMixFormat {
     public FixedLengthTokenizer unknownRecordTokenizer2() {
     	FixedLengthTokenizer tokenizer = new FixedLengthTokenizer();
 
-        tokenizer.setNames("lineString");
-        tokenizer.setColumns(new Range(1));
-        tokenizer.setStrict(false);
-        //tokenizer.(",");
+        tokenizer.setNames("id", "firstName", "lastName", "birthdate");
+        tokenizer.setColumns(new Range(23,45),
+                new Range(1,22),
+                new Range(46,68),
+                new Range(146));
         
         return tokenizer;
 }
+    
+//    public FixedLengthTokenizer unknownRecordTokenizer2() {
+//    	FixedLengthTokenizer tokenizer = new FixedLengthTokenizer();
+//
+//        tokenizer.setNames("lineString");
+//        tokenizer.setColumns(new Range(1));
+//        tokenizer.setStrict(false);
+//        //tokenizer.(",");
+//        
+//        return tokenizer;
+//}
 	
 
 	@Bean(name="mixFormatJobStep")

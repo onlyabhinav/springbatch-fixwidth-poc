@@ -1,0 +1,101 @@
+Matisse20 |                 5045 |      Tremblay Courts |      East Margemouth |                                           Zimbabwe | Mon Aug 31 07:46:53 IST 1981
+Rubens20 |                 7827 |            Thea Fork |          Keelingview |                                          Macedonia | Thu Mar 01 22:25:30 IST 1973
+Cassatt20 |                79972 |       Bechtelar Fall |           New Keeley |                                              Malta | Mon Jul 12 08:42:27 IST 2004
+Gauguin20 |                76910 |      Krajcik Passage |           Kohlertown |                            Cocos (Keeling) Islands | Fri Aug 25 21:37:17 IST 1995
+Warhol20 |                 1872 |        Streich Manor |      South Kaciburgh |                                        Switzerland | Mon May 28 10:19:00 IST 1973
+Gauguin20 |                  869 |          Oran Course |           New Isidro |                           United States of America | Thu Nov 30 11:01:14 IST 1961
+Renoir20 |                 5961 |          Zieme Lodge |      West Tressafort |                                             Rwanda | Thu Sep 25 22:27:02 IST 1975
+Matisse20 |                  456 |        Doyle Corners |            Reganview |                                              Malta | Sun Aug 01 02:06:36 IST 1993
+Edward Hopper20 |                 4793 |         Rempel Grove |           Hudsonfort |                                  Republic of Korea | Sat Jun 15 22:07:17 IST 1996
+Joan Miro20 |                47158 |      Wilfredo Shoals |          East Hettie |                                              Gabon | Mon Mar 09 23:18:41 IST 1981
+Degas20 |                  113 |  Swaniawski Motorway |           West Emmie |                               Netherlands Antilles | Tue Jan 17 13:42:20 IST 1989
+Donatello20 |                 3657 |        Carole Branch |          New Earlene |                                        Switzerland | Sat Jun 26 06:02:57 IST 1971
+Joan Miro20 |                  316 |       Bergstrom Isle |         Ritchiemouth |                                        Afghanistan | Mon Aug 06 02:16:14 IST 1973
+Chagall20 |                  489 |      Johnston Radial |     North Forestland |                                            Tokelau | Sun Dec 18 06:25:02 IST 1994
+Seurat20 |                 1043 |           Verla Rest |           West Luigi |                                             Malawi | Tue Oct 23 23:25:55 IST 1984
+Escher20 |                68036 |       Percival Rapid |          Sanfordside |                           Central African Republic | Sun May 30 02:46:34 IST 1976
+Edward Hopper20 |                  839 |         Waelchi Wall |        North Tiaberg |                                            Andorra | Thu May 12 09:03:06 IST 1960
+Vincent20 |                  710 |       Stella Mission |         Schulistport |                                             Guyana | Sun Dec 20 07:29:07 IST 1992
+Pissarro20 |                  324 |           Koch Coves |           North Dell |                                              Chile | Mon Nov 01 17:21:58 IST 2004
+Michelangelo20 |                 7641 |        Elinore Falls |       Alexanderville |                           Northern Mariana Islands | Thu Feb 13 06:22:33 IST 1997
+Vincent20 |                95867 |          Huels Forge |           Kulasshire |                                          Venezuela | Thu Nov 28 12:14:09 IST 2002
+Edward Hopper20 |                93049 |       Mauricio Trail |           Cronashire |                                     Western Sahara | Sat Feb 15 01:33:08 IST 1992
+Kahlo20 |                62417 |          Mayer Ports |          Larkinburgh |                                     United Kingdom | Sun Nov 14 20:14:48 IST 1971
+Rothko20 |                11686 |        Flatley Haven |           Zettamouth |                                          Singapore | Sun Mar 09 06:58:51 IST 1986
+Cezanne20 |                43231 |         Kub Junction |          Lesterville |                                             Israel | Thu Mar 17 07:27:05 IST 1983
+Monet20 |                96825 |      Marietta Spring |    Pfannerstillville |                                           Bulgaria | Wed Aug 11 09:23:23 IST 1982
+Durer20 |                 2963 |       Carroll Shoals |           Watsonbury |                                              Ghana | Tue Mar 13 03:56:40 IST 2001
+Donatello20 |                44143 |         Clifton Mews |         Eichmannview |                                         Kazakhstan | Thu Jun 16 01:14:20 IST 1983
+El Greco20 |                48771 |         Schumm Vista |           Enolaville |                                               Peru | Fri Mar 21 18:20:16 IST 1969
+Bernini20 |                  160 |       Abernathy Neck |      South Anikafurt |                                            Bahrain | Mon Dec 06 01:07:49 IST 2004
+Monet20 |                 3432 |          Larissa Rue |   Runolfsdottirmouth |                                              Nauru | Sat Apr 13 13:53:59 IST 1963
+Magritte20 |                 1464 |   Nathaniel Turnpike |           New Dereck |                          Saint Pierre and Miquelon | Sun Nov 15 20:27:40 IST 1998
+Renoir20 |                57381 |        Barrett Lakes |          Shakiraberg |                                            Comoros | Sat Mar 04 15:19:44 IST 1989
+Rothko20 |                50034 |           Weber Well |      Breitenbergfort |                                     Cayman Islands | Sun Nov 04 08:12:04 IST 1973
+Cassatt20 |                62021 |            Nolan Rue |             Auerview |                                            Jamaica | Mon Apr 11 04:59:47 IST 1983
+Rothko20 |                 2831 |            Kuhic Dam |          Joshuaburgh |                                           Maldives | Fri Jan 31 21:52:31 IST 2003
+Cezanne20 |                99483 |        Monahan Green |          Osinskiside |                                         Azerbaijan | Sun Nov 26 10:25:44 IST 1978
+Rembrandt20 |                55976 |         Maurice Fort |       Daughertyhaven |                                             Turkey | Tue Jan 19 06:39:13 IST 1993
+Cassatt20 |                87107 |        Orrin Station |  East Christianmouth |                                 Russian Federation | Thu Jan 26 16:53:06 IST 1984
+Rubens20 |                  615 |          Silas Inlet |         South Julius |                                             Gambia | Fri Nov 08 12:49:27 IST 1991
+Munch20 |                 6439 |       Bogisich Point |      Port Elishatown |                                              Japan | Thu Jul 27 11:30:07 IST 1978
+Gauguin20 |                 8828 |         Rogers Trace |          Lake Virgil |                                            Georgia | Tue Sep 04 08:44:43 IST 1962
+Kandinsky20 |                  452 |          Swift Plaza |           Dannyhaven |                                               Guam | Tue Nov 01 11:43:36 IST 1983
+Pissarro20 |                45183 |    Carroll Stravenue |          Novellabury |                                              Haiti | Thu Aug 11 02:09:11 IST 1966
+Vettriano20 |                96039 |       Howell Mission |         South Christ |                        Falkland Islands (Malvinas) | Sat May 12 20:12:57 IST 1973
+Pissarro20 |                84909 |           Micah Isle |        East Augustus |                                            Romania | Sun Sep 04 19:11:28 IST 1994
+Da Vinci20 |                 2838 |           Celia Cape |           Raoulhaven |                                             Malawi | Thu Jan 31 18:26:41 IST 2002
+Renoir20 |                63487 |        Pouros Rapids |     New Rogerchester |                                             Taiwan | Sun May 09 11:43:49 IST 2004
+Vincent20 |                 3752 |           Marks Glen |         Port Diamond |                                           Anguilla | Mon Feb 09 08:59:53 IST 1976
+Picasso20 |                  850 |         Toby Orchard |           Klingburgh |                           Turks and Caicos Islands | Sun Sep 16 05:31:20 IST 2001
+Kandinsky20 |                 3334 |      Maxime Causeway |       Lake Shadhaven |                                        Switzerland | Wed Apr 11 11:56:26 IST 1984
+Joan Miro20 |                  150 |        Torphy Stream |       North Clifford |                                         Azerbaijan | Mon Dec 07 13:45:14 IST 1987
+Dali20 |                40369 |      Freddie Squares |           South Neil |                           Central African Republic | Sun Jan 01 19:02:58 IST 1967
+Joan Miro20 |                05340 |         Ivory Island |            Ciarafort |                                   Saint Barthelemy | Sat Jan 20 04:45:11 IST 1973
+Rothko20 |                 4528 |         Candido Loop |             Joanaton |                                             Bhutan | Sat Jun 18 06:27:44 IST 1966
+Rembrandt20 |                 1264 |           Kacie Ways |    North Goldenburgh |                                           Slovenia | Sun May 30 21:14:04 IST 1999
+Dali20 |                34913 |       Steuber Forest |         Port Laurine |                                              Aruba | Thu Jan 16 11:38:32 IST 1958
+Chagall20 |                 6533 |       Darby Motorway |      West Randalfurt |                                            Georgia | Thu Jul 15 10:38:05 IST 1993
+Monet20 |                55175 |          Shanie Fork |            Rohantown |                                       Saint Martin | Fri Jul 28 00:25:26 IST 1995
+Paul Klee20 |                 5740 |        Peggie Avenue |       Collierchester |                                           Dominica | Mon Jun 30 13:26:19 IST 2003
+Monet20 |                 9609 |      Margret Orchard |          Bradtkeview |                               Syrian Arab Republic | Tue Oct 09 10:50:15 IST 1962
+Cezanne20 |                 6933 |        Corwin Tunnel |     New Abagailhaven |                   Lao People's Democratic Republic | Thu Jan 29 09:41:23 IST 1987
+Pissarro20 |                 2823 |     Hodkiewicz Shore |           Adrielport |                                             Guinea | Tue Mar 10 11:20:53 IST 1987
+Monet20 |                  343 |       McClure Fields |            Lilaburgh |                                           Bulgaria | Tue Jun 04 08:39:17 IST 1985
+Klimt20 |                  652 |       Kaylin Parkway |          Hackettport |       Antarctica (the territory South of 60 deg S) | Mon Sep 14 03:00:06 IST 1992
+Joan Miro20 |                  528 |         Dorian Ports |      West Minnieland |                                  Equatorial Guinea | Sat Jun 25 21:36:46 IST 1994
+Donatello20 |                82888 |          Adams Place |    East Diamondville |                                  Brunei Darussalam | Tue Sep 30 07:26:27 IST 1986
+Pollock20 |                17619 |         Hilpert Cove |         Prohaskafurt |                                           Kiribati | Mon Jul 15 21:57:19 IST 2002
+Degas20 |                 8385 |     Rosenbaum Stream |      Port Amelieview |                                        Afghanistan | Sun Sep 26 21:58:27 IST 1993
+Raphael20 |                18987 |              Lue Row |      Lake Lawsonfort |                      Holy See (Vatican City State) | Wed Dec 11 10:22:21 IST 1991
+Warhol20 |                38098 |       Madonna Points |       D'Amorechester |                                       Saint Martin | Fri Mar 19 11:36:36 IST 2004
+Escher20 |                  399 |          Bayer Mills |       North Robbport |                                       South Africa | Wed Jul 01 12:11:56 IST 1987
+Da Vinci20 |                 5771 |          Elmore Path |             Ottofurt |                                        Afghanistan | Wed Jun 30 01:25:29 IST 1976
+Rubens20 |                36684 |   Bergnaum Stravenue |         Port Felicia |                                           Djibouti | Thu Jan 21 14:05:01 IST 1965
+Rubens20 |                 6249 |    Jaskolski Village |          Hickleville |                                            Morocco | Wed Sep 09 09:48:31 IST 1992
+Matisse20 |                  123 |       Grover Gardens |          Gaylordberg |                                           Paraguay | Wed Nov 30 01:19:51 IST 1960
+Cezanne20 |                33284 |    Providenci Meadow |       Lake Berylbury |                                            Denmark | Wed Aug 05 00:15:49 IST 1981
+Joan Miro20 |                 9156 |         Hegmann Loaf |     North Dagmarview |                                             Jersey | Mon Mar 16 19:46:22 IST 1964
+Diego Rivera20 |                 1817 |        Aidan Corners |         Patienceside |                          Bouvet Island (Bouvetoya) | Fri Jan 18 01:51:42 IST 1980
+Picasso20 |                 2086 |           Kozey Fort |              Olastad |       South Georgia and the South Sandwich Islands | Mon Mar 27 19:37:19 IST 1989
+Gauguin20 |                  532 |          Lesch Trace |   North Darianamouth |                                            Lesotho | Tue Mar 16 06:15:46 IST 1982
+Vincent20 |                  893 |       Quentin Summit |     Port Graysonstad |                                         Seychelles | Thu Oct 26 07:51:52 IST 1967
+Matisse20 |                  233 |   Konopelski Prairie |       West Jackyfurt |                                       Cook Islands | Sun Jul 10 20:22:12 IST 1994
+Chagall20 |                 9433 |            Yost Lake |        West Arvidton |                                          Mauritius | Tue May 07 11:19:00 IST 1968
+Cezanne20 |                 5296 |        Kenny Springs |       New Harveystad |                                            Bahamas | Wed Apr 19 23:21:21 IST 1989
+Donatello20 |                 9616 |        Jaylan Circle |         Cormiershire |                  Heard Island and McDonald Islands | Fri Sep 05 07:18:54 IST 1986
+Rubens20 |                  986 |           Alfred Run |         Ignaciohaven |                                           Pakistan | Wed Apr 25 07:46:32 IST 1979
+Ansel Adams20 |                71483 |        Therese Coves |     South Amaliastad |                                             Panama | Thu Jun 30 10:28:46 IST 1966
+Rubens20 |                 1160 |         Cora Freeway |    North Earnestview |                                            Liberia | Wed Nov 12 12:51:56 IST 1986
+Matisse20 |                  819 |            Mayer Dam |     New Brandonmouth |                                           Honduras | Thu Nov 13 15:43:24 IST 1986
+Bernini20 |                91121 |         Casimer Cove |       Wintheiserside |                                            Croatia | Sat Jan 02 20:59:24 IST 1988
+Raphael20 |                 6310 |           Dena Rapid |          Kamrynmouth |                                         Tajikistan | Mon Feb 07 12:02:34 IST 1977
+Pissarro20 |                 7542 |      Mosciski Divide |          South Ivory |                                             Cyprus | Fri Sep 26 15:01:18 IST 1969
+Edward Hopper20 |                53168 |          Swift Inlet |             West Dee |                               Netherlands Antilles | Sat Dec 22 01:46:16 IST 1962
+Matisse20 |                 3295 |          Ferry Alley |             Willside |                                      Cote d'Ivoire | Fri Jan 31 16:22:27 IST 1969
+Dali20 |                  216 |          Ulises Isle |        Lake Felicity |                          Saint Pierre and Miquelon | Sat Jul 15 07:03:29 IST 1967
+Winslow Homer20 |                32935 |         Kevon Island |            Port Jody |                                            Nigeria | Wed Dec 05 09:12:19 IST 1979
+Cezanne20 |                 7674 |      Sydnee Mountain |  Lake Nicholechester |                                      French Guiana | Sat Oct 19 13:10:10 IST 1963
+Cassatt20 |                 7074 |      Terry Mountains |          Kirstinbury |                                       Sierra Leone | Wed Apr 28 00:14:01 IST 1982
+Gauguin20 |                  907 |        Ewell Station |     Port Biankahaven |                        Falkland Islands (Malvinas) | Sat Sep 23 21:46:20 IST 1989
+Kahlo20 |                  073 |       Johnson Courts |       Weimannchester |                                              Gabon | Thu May 15 14:01:57 IST 1980
