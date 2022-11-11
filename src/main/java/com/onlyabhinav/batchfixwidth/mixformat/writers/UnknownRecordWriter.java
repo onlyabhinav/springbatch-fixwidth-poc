@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Component
-public class UnknownRecordWriter<MixRecord> implements ItemWriter<MixRecord> {
+public class UnknownRecordWriter<MixRecord> extends AbstractWriter  implements ItemWriter<MixRecord> {
 
 	@Autowired
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
@@ -30,15 +30,15 @@ public class UnknownRecordWriter<MixRecord> implements ItemWriter<MixRecord> {
 	@Override
 	public void write(List<? extends MixRecord> items) throws Exception {
 
-		for (MixRecord item : items) {
-			log.info(item.toString());
-			saveToDB((UnknownRecord2) item);
+		log.info("Load Mode: getIsBulkMode={}",mixFormatConfig.getIsBulkMode());
+		if(mixFormatConfig.getIsBulkMode()) {
+			 saveToDBBulk((List<UnknownRecord2>) items);
+		}else {
+			for (MixRecord item : items) {
+				//log.debug(item.toString());
+				saveToDB((UnknownRecord2) item);
+			}	
 		}
-		
-		//int[] res = saveToDBBulk((List<ARecord>) items);
-		
-		//log.info("Bulk Update output={}",res);
-
 	}
 
 	public int saveToDB(UnknownRecord2 a) {

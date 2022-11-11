@@ -22,7 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Component
-public class OneRecordWriter<MixRecord> implements ItemWriter<MixRecord> {
+public class OneRecordWriter<MixRecord> extends AbstractWriter  implements ItemWriter<MixRecord> {
 
 	@Autowired
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
@@ -32,15 +32,15 @@ public class OneRecordWriter<MixRecord> implements ItemWriter<MixRecord> {
 	@Override
 	public void write(List<? extends MixRecord> items) throws Exception {
 
-		for (MixRecord item : items) {
-			log.info(item.toString());
-			saveToDB((OneRecord) item);
+		log.info("Load Mode: getIsBulkMode={}",mixFormatConfig.getIsBulkMode());
+		if(mixFormatConfig.getIsBulkMode()) {
+			 saveToDBBulk((List<OneRecord>) items);
+		}else {
+			for (MixRecord item : items) {
+				//log.debug(item.toString());
+				saveToDB((OneRecord) item);
+			}	
 		}
-		
-		//int[] res = saveToDBBulk((List<ARecord>) items);
-		
-		//log.info("Bulk Update output={}",res);
-
 	}
 
 	public int saveToDB(OneRecord a) {

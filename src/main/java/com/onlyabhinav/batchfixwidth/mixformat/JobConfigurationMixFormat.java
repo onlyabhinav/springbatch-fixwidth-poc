@@ -275,7 +275,7 @@ public class JobConfigurationMixFormat {
 	@Bean(name="mixFormatJobStep")
 	public Step step1() {
 		return stepBuilderFactory.get("step1")
-				.chunk(50)
+				.chunk(500)
 				.reader(reader())
 				.writer(mixItemWriter())
 				.build();
