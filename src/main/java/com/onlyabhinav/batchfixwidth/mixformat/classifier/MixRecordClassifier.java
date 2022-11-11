@@ -9,33 +9,32 @@ import com.onlyabhinav.batchfixwidth.mixformat.domain.ARecord;
 import com.onlyabhinav.batchfixwidth.mixformat.domain.BRecord;
 import com.onlyabhinav.batchfixwidth.mixformat.domain.MixRecord;
 import com.onlyabhinav.batchfixwidth.mixformat.domain.OneRecord;
+import com.onlyabhinav.batchfixwidth.mixformat.writers.ARecordWriter;
+import com.onlyabhinav.batchfixwidth.mixformat.writers.BRecordWriter;
+import com.onlyabhinav.batchfixwidth.mixformat.writers.OneRecordWriter;
+import com.onlyabhinav.batchfixwidth.mixformat.writers.UnknownRecordWriter;
 
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@Setter
 @Component
 public class MixRecordClassifier implements Classifier<MixRecord, ItemWriter<MixRecord>> {
 
 	private static final long serialVersionUID = 1L;
 
 	@Autowired
-	private ARecordWriter aRecordWriter;
+	private ARecordWriter<MixRecord> aRecordWriter;
 
 	@Autowired
-	private BRecordWriter bRecordWriter;
+	private BRecordWriter<MixRecord> bRecordWriter;
 
 	@Autowired
-	private OneRecordWriter oneRecordWriter;
+	private OneRecordWriter<MixRecord> oneRecordWriter;
 
 	@Autowired
-	private UnknownRecordWriter unknownRecordWriter;
+	private UnknownRecordWriter<MixRecord> unknownRecordWriter;
 
-//    public MixRecordClassifier(ItemWriter evenItemWriter, ItemWriter oddItemWriter) {
-//        this.aRecordWriter = evenItemWriter;
-//        this.bRecordWriter = oddItemWriter;
-//    }
+
 
 	@Override
 	public ItemWriter<MixRecord> classify(MixRecord mixRecord) {

@@ -1,4 +1,4 @@
-package com.onlyabhinav.batchfixwidth.mixformat.classifier;
+package com.onlyabhinav.batchfixwidth.mixformat.writers;
 
 import java.util.List;
 
@@ -9,10 +9,9 @@ import com.onlyabhinav.batchfixwidth.mixformat.domain.MixRecord;
 
 import lombok.extern.slf4j.Slf4j;
 
-
 @Slf4j
 @Component
-public class OneRecordWriter implements ItemWriter<MixRecord> {
+public class BRecordWriter<MixRecord> implements ItemWriter<MixRecord> {
 
 	@Override
 	public void write(List<? extends MixRecord> items) throws Exception {

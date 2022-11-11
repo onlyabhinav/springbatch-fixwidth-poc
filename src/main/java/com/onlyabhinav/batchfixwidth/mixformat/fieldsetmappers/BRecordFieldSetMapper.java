@@ -5,12 +5,13 @@ import org.springframework.batch.item.file.transform.FieldSet;
 import org.springframework.validation.BindException;
 
 import com.onlyabhinav.batchfixwidth.mixformat.domain.BRecord;
+import com.onlyabhinav.batchfixwidth.mixformat.domain.MixRecord;
 
 
-public class BRecordFieldSetMapper implements FieldSetMapper<BRecord> {
+public class BRecordFieldSetMapper implements FieldSetMapper<MixRecord> {
 
 	@Override
-	public BRecord mapFieldSet(FieldSet fieldSet) throws BindException {
+	public MixRecord mapFieldSet(FieldSet fieldSet) throws BindException {
 		return new BRecord(fieldSet.readString("id"),
 				fieldSet.readString("firstName"),
 				fieldSet.readString("lastName"),

@@ -15,7 +15,6 @@
  */
 package com.onlyabhinav.batchfixwidth.mixformat.domain;
 
-import java.util.Date;
 
 import lombok.Data;
 

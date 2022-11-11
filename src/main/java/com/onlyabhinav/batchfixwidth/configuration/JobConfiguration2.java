@@ -48,8 +48,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class JobConfiguration2  implements ApplicationContextAware {
 
-	@Autowired
-	public StepBuilderFactory stepBuilderFactory;
+//	@Autowired
+//	public StepBuilderFactory stepBuilderFactory;
 
 	@Autowired
 	public JobExplorer jobExplorer;

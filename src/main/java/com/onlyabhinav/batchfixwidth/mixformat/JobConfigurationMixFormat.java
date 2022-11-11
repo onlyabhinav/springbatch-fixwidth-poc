@@ -20,6 +20,8 @@ package com.onlyabhinav.batchfixwidth.mixformat;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.sql.DataSource;
+
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
@@ -27,6 +29,8 @@ import org.springframework.batch.core.configuration.annotation.StepBuilderFactor
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.ItemWriter;
+import org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider;
+import org.springframework.batch.item.database.JdbcBatchItemWriter;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.LineMapper;
 import org.springframework.batch.item.file.builder.FlatFileItemWriterBuilder;
@@ -41,11 +45,13 @@ import org.springframework.batch.item.support.ClassifierCompositeItemProcessor;
 import org.springframework.batch.item.support.ClassifierCompositeItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.classify.Classifier;
 import org.springframework.classify.PatternMatchingClassifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.FileSystemResource;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import com.onlyabhinav.batchfixwidth.domain.Customer;
 import com.onlyabhinav.batchfixwidth.domain.Customer2;
@@ -76,12 +82,23 @@ public class JobConfigurationMixFormat {
 	public StepBuilderFactory stepBuilderFactory;
 
 	
-	private Map tokenizers;
-	private Map fieldSetMappers;
+	private Map<String,LineTokenizer> tokenizers;
+	private Map<String,FieldSetMapper<MixRecord>> fieldSetMappers;
 	
+	
+//    @Bean
+//    public DataSource mysqlDataSource() {
+//        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//        dataSource.setDriverClassName("org.postgresql.Driver");
+//        dataSource.setUrl("jdbc:postgresql://localhost:5432/postgres");
+//        dataSource.setUsername("postgres");
+//        dataSource.setPassword("1122");
+//
+//        return dataSource;
+//    }
 	
 	@Autowired
-	private MixRecordClassifier mixRecordClassifier;
+	private Classifier<MixRecord, ItemWriter<? super MixRecord>> mixRecordClassifier;
 	
 //    @Bean
 //    @StepScope
@@ -96,8 +113,8 @@ public class JobConfigurationMixFormat {
 //    
     @Bean
     @StepScope
-    public FlatFileItemReader reader() {
-        FlatFileItemReader reader = new FlatFileItemReader();
+    public FlatFileItemReader<MixRecord> reader() {
+        FlatFileItemReader<MixRecord>  reader = new FlatFileItemReader();
         log.info("[START] - Input File name = {}");
         reader.setLinesToSkip(1);
 		reader.setResource(new ClassPathResource("/data/customer-fixwd-mixformat.txt"));
@@ -107,8 +124,8 @@ public class JobConfigurationMixFormat {
     }
     
     @Bean
-    public LineMapper patternLineMapper() {
-        PatternMatchingCompositeLineMapper patternLineMapper = new PatternMatchingCompositeLineMapper<>();
+    public LineMapper<MixRecord> patternLineMapper() {
+        PatternMatchingCompositeLineMapper<MixRecord> patternLineMapper = new PatternMatchingCompositeLineMapper<>();
         tokenizers = new HashMap<String, LineTokenizer>();
         try {
             tokenizers.put("A*", aRecordTokenizer());
@@ -118,7 +135,7 @@ public class JobConfigurationMixFormat {
         } catch (Exception e) {
             e.printStackTrace();
         }
-         fieldSetMappers = new HashMap<String, FieldSetMapper>();
+         fieldSetMappers = new HashMap<String, FieldSetMapper<MixRecord>>();
         fieldSetMappers.put("A*", new ARecordFieldSetMapper());
         fieldSetMappers.put("B*", new BRecordFieldSetMapper());
         fieldSetMappers.put("1*", new OneRecordFieldSetMapper());
@@ -147,14 +164,27 @@ public class JobConfigurationMixFormat {
     }
 
 	@Bean(name="mixFormatItemWriter")
-	public ItemWriter<MixRecord> mixItemWriter() {
+	public ItemWriter mixItemWriter() {
 
-		ClassifierCompositeItemWriter mixItemWriter = new ClassifierCompositeItemWriter<>();
+		ClassifierCompositeItemWriter<MixRecord> mixItemWriter = new ClassifierCompositeItemWriter<>();
 		
 		mixItemWriter.setClassifier(mixRecordClassifier);
 		
 		return mixItemWriter;
 
+	}
+	
+
+	public JdbcBatchItemWriter<MixRecord> aRecordItemWriter() {
+		JdbcBatchItemWriter<MixRecord> itemWriter = new JdbcBatchItemWriter<>();
+
+		
+		//itemWriter.setDataSource(datasource);
+		itemWriter.setSql("INSERT INTO SPRING_BATCH_1 (ID , first_name, last_name, birth_date) VALUES (:id, :firstName, :lastName, :birthdate)");
+		itemWriter.setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>());
+		itemWriter.afterPropertiesSet();
+
+		return itemWriter;
 	}
 	
 //	@Bean(name="mixFormatItemWriterDummy")
@@ -233,7 +263,7 @@ public class JobConfigurationMixFormat {
 	@Bean(name="mixFormatJobStep")
 	public Step step1() {
 		return stepBuilderFactory.get("step1")
-				.chunk(5)
+				.chunk(50)
 				.reader(reader())
 				.writer(mixItemWriter())
 				.build();
