@@ -39,25 +39,25 @@ public class MixRecordClassifier implements Classifier<MixRecord, ItemWriter<Mix
 	@Override
 	public ItemWriter<MixRecord> classify(MixRecord mixRecord) {
 
-		log.info("Inside MixRecordClassifier :: classify -  mixRecord is of type={}", mixRecord.getClass());
+		log.debug("Inside MixRecordClassifier :: classify -  mixRecord is of type={}", mixRecord.getClass());
 
 		if (mixRecord instanceof ARecord) {
-			log.info("Writer: A");
+			log.debug("Writer: A");
 			return aRecordWriter;
 		}
 
 		if (mixRecord instanceof BRecord) {
-			log.info("Writer: B");
+			log.debug("Writer: B");
 			return bRecordWriter;
 		}
 
 		if (mixRecord instanceof OneRecord) {
-			log.info("Writer: 1");
+			log.debug("Writer: 1");
 			return oneRecordWriter;
 		}
 
 		else {
-			log.info("Writer: UNKNOWN");
+			log.debug("Writer: UNKNOWN");
 			return unknownRecordWriter;
 		}
 
