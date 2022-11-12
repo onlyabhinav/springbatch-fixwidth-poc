@@ -32,7 +32,7 @@ public class OneRecordWriter<MixRecord> extends AbstractWriter  implements ItemW
 	@Override
 	public void write(List<? extends MixRecord> items) throws Exception {
 
-		log.info("Load Mode: getIsBulkMode={}",mixFormatConfig.getIsBulkMode());
+		log.debug("Load Mode: getIsBulkMode={}",mixFormatConfig.getIsBulkMode());
 		if(mixFormatConfig.getIsBulkMode()) {
 			 saveToDBBulk((List<OneRecord>) items);
 		}else {

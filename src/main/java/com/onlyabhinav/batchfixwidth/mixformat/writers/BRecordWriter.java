@@ -28,7 +28,7 @@ public class BRecordWriter<MixRecord> extends AbstractWriter  implements ItemWri
 	@Override
 	public void write(List<? extends MixRecord> items) throws Exception {
 
-		log.info("Load Mode: getIsBulkMode={}",mixFormatConfig.getIsBulkMode());
+		log.debug("Load Mode: getIsBulkMode={}",mixFormatConfig.getIsBulkMode());
 		if(mixFormatConfig.getIsBulkMode()) {
 			 saveToDBBulk((List<BRecord>) items);
 		}else {

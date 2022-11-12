@@ -22,7 +22,12 @@ public class CreateMockData {
 
 		int progress_chunk = 10000;
 		int row_count = 2_000_000;
-		String filename = "mockfile_" + row_count + "_"+getRandomNumber()+".txt";
+		
+		String big_file_hint="";
+		if(row_count > 100_000)
+			big_file_hint="big_";
+		
+		String filename = big_file_hint+"mockfile_" + row_count + "_"+getRandomNumber()+".txt";
 
 		fakerData = new FakerData(200);
 		
