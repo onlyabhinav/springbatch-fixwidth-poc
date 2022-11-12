@@ -117,7 +117,7 @@ public class JobConfigurationMixFormat {
         FlatFileItemReader<MixRecord>  reader = new FlatFileItemReader();
         log.info("[START] - Input File name = {}");
         reader.setLinesToSkip(1);
-		reader.setResource(new ClassPathResource("/data/mockfile_10000_24361.txt"));
+		reader.setResource(new ClassPathResource("/data/mockfile_2000000_59026.txt"));
         reader.setLineMapper(patternLineMapper());
         log.info("[END] - Input File name = {}");
         return reader;
