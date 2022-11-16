@@ -15,13 +15,22 @@ import lombok.extern.slf4j.Slf4j;
 public class CreateMockData {
 
 	private static BufferedWriter writer;
+	
+	private static FakerData fakerData;
 
 	public static void main(String[] args) throws IOException {
 
-		int progress_chunk = 50;
-		int row_count = 10_000;
-		String filename = "mockfile_" + row_count + "_"+getRandomNumber()+".txt";
+		int progress_chunk = 10000;
+		int row_count = 2_000_000;
+		
+		String big_file_hint="";
+		if(row_count > 100_000)
+			big_file_hint="big_";
+		
+		String filename = big_file_hint+"mockfile_" + row_count + "_"+getRandomNumber()+".txt";
 
+		fakerData = new FakerData(200);
+		
 		writer = new BufferedWriter(new FileWriter(filename));
 
 		for (int i = 0; i <= row_count; i++) {
@@ -36,16 +45,16 @@ public class CreateMockData {
 
 	private static void createMock() {
 
-		Faker faker = new Faker();
+		//Faker faker = new Faker();
 
 		// faker.company().buzzword().;
 
-		String nameName = faker.artist().name();
-		String bdate = faker.date().birthday().toString();
-		String city = faker.address().city();
-		String companyBuzz = faker.company().buzzword();
-		String zipcode = faker.address().zipCode();
-		String country = faker.address().country();
+		String nameName = fakerData.getName();
+		String bdate = fakerData.getBirthdate();
+		String city = fakerData.getCity();
+		String companyBuzz = fakerData.getBuzzword();
+		String zipcode = fakerData.getZipcode();
+		String country = fakerData.getCountry();
 
 		String mockRow = String.format("%-20s | %20s | %20s | %20s | %50s | %20s\n", nameName, zipcode, companyBuzz, city,
 				country, bdate);

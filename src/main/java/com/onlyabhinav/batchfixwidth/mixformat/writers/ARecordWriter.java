@@ -32,7 +32,7 @@ public class ARecordWriter<MixRecord> extends AbstractWriter implements ItemWrit
 	@Override
 	public void write(List<? extends MixRecord> items) throws Exception {
 
-		log.info("Load Mode: getIsBulkMode={}",mixFormatConfig.getIsBulkMode());
+		log.debug("Load Mode: getIsBulkMode={}",mixFormatConfig.getIsBulkMode());
 		if(mixFormatConfig.getIsBulkMode()) {
 			 saveToDBBulk((List<ARecord>) items);
 		}else {

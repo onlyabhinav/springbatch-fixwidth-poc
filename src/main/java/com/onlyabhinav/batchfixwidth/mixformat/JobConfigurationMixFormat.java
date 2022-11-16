@@ -117,7 +117,7 @@ public class JobConfigurationMixFormat {
         FlatFileItemReader<MixRecord>  reader = new FlatFileItemReader();
         log.info("[START] - Input File name = {}");
         reader.setLinesToSkip(1);
-		reader.setResource(new ClassPathResource("/data/mockfile_10000_24361.txt"));
+		reader.setResource(new ClassPathResource("/data/big_mockfile_2000000_75691.txt"));
         reader.setLineMapper(patternLineMapper());
         log.info("[END] - Input File name = {}");
         return reader;
@@ -275,7 +275,7 @@ public class JobConfigurationMixFormat {
 	@Bean(name="mixFormatJobStep")
 	public Step step1() {
 		return stepBuilderFactory.get("step1")
-				.chunk(500)
+				.chunk(1000)
 				.reader(reader())
 				.writer(mixItemWriter())
 				.build();

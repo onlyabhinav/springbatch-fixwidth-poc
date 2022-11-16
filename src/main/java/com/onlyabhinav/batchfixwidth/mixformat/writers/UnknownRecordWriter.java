@@ -30,7 +30,7 @@ public class UnknownRecordWriter<MixRecord> extends AbstractWriter  implements I
 	@Override
 	public void write(List<? extends MixRecord> items) throws Exception {
 
-		log.info("Load Mode: getIsBulkMode={}",mixFormatConfig.getIsBulkMode());
+		log.debug("Load Mode: getIsBulkMode={}",mixFormatConfig.getIsBulkMode());
 		if(mixFormatConfig.getIsBulkMode()) {
 			 saveToDBBulk((List<UnknownRecord2>) items);
 		}else {
